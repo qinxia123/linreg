@@ -5,23 +5,8 @@
 \alias{ridgereg-class}
 \alias{ridgereg}
 \title{Ridge Regression Reference Class}
-\arguments{
-\item{formula}{A formula specifying the model to be used.}
-
-\item{data}{A data frame containing the data for fitting the model.}
-
-\item{data_name}{A character string specifying the name of the dataset.}
-
-\item{lambda}{A numeric value for the ridge penalty parameter (default is 0).}
-
-\item{newdata}{Optional data frame for predicting new values. If NULL, the method returns fitted values for the training data.}
-}
 \value{
 An instance of the `ridgereg` class with fields and methods for ridge regression.
-
-A numeric vector of predicted values.
-
-A numeric vector of ridge regression coefficients.
 }
 \description{
 This reference class implements ridge regression, allowing users to fit a ridge regression model, compute coefficients, predict values, and print model summaries.

@@ -28,13 +28,6 @@ ridgereg <- setRefClass(
   ),
 
   methods = list(
-
-    #' Initialize the ridge regression model
-    #' @param formula A formula specifying the model to be used.
-    #' @param data A data frame containing the data for fitting the model.
-    #' @param data_name A character string specifying the name of the dataset.
-    #' @param lambda A numeric value for the ridge penalty parameter (default is 0).
-    #' @export
     initialize = function(formula, data, data_name, lambda = 0) {
       formula <<- formula
       data_name <<- data_name
@@ -56,9 +49,8 @@ ridgereg <- setRefClass(
       message("Data name stored: ", data_name)
     },
 
-    #' Print the ridge regression model details
-    #' @export
-    print = function() {
+
+    print = function(model) {
       cat("Call:\n")
       cat(sprintf("ridgereg(formula = %s, data = %s, lambda = %.1f)\n",
                   deparse(formula), data_name, lambda))
@@ -79,11 +71,8 @@ ridgereg <- setRefClass(
       cat("\n")
     },
 
-    #' Predict new values based on the ridge regression model
-    #' @param newdata Optional data frame for predicting new values. If NULL, the method returns fitted values for the training data.
-    #' @return A numeric vector of predicted values.
-    #' @export
-    predict = function(newdata = NULL) {
+
+    predict = function(model, newdata = NULL) {
       if (is.null(newdata)) {
         return(fitted_values)
       } else {
@@ -94,10 +83,8 @@ ridgereg <- setRefClass(
       }
     },
 
-    #' Get the ridge regression coefficients
-    #' @return A numeric vector of ridge regression coefficients.
-    #' @export
-    coef = function() {
+
+    coef = function(model) {
       return(as.numeric(coefficients))
     }
   )

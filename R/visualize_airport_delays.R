@@ -7,6 +7,9 @@ library(dplyr)
 library(ggplot2)
 
 # Create a visualization function
+
+
+
 visualize_airport_delays <- function() {
   # Data processing: Calculate the average delay for each airport
   airport_delays <- flights %>%
