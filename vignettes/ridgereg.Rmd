@@ -108,8 +108,11 @@ best_lambda
 # Evaluate the Performance of All Models on the Test Dataset
 
 ## Predictions for the test dataset
+
 lm_test_predictions <- predict(lm_model, test_data)
+
 forward_test_predictions <- predict(forward_model, test_data)
+
 ridge_test_predictions <- predict(ridge_model, test_data)
 
 ## Calculate RMSE for test dataset
